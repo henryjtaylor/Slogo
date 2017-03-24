@@ -1,5 +1,10 @@
 package backend.API;
 
+/**
+ * The API for Model
+ * @author Henry and Yanbo
+ *
+ */
 public interface ModelAPI {
 
 	/**

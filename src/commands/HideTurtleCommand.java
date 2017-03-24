@@ -5,11 +5,13 @@ import java.util.List;
 import backend.UserMethodManager;
 import backend.VariableManager;
 
+/**
+ * HideTurtleCommand, a subclass of AbstractCommand
+ * @author Yanbo Fang
+ * @author Henry Taylor
+ */
 public class HideTurtleCommand extends AbstractCommand {
-	
-	/**
-	 * 
-	 */
+
 	private static final long serialVersionUID = -215612221642102269L;
 	private static final Integer NUM_OF_EXPRESSION = 0;
 	

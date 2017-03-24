@@ -5,11 +5,13 @@ import java.util.List;
 import backend.UserMethodManager;
 import backend.VariableManager;
 
+/**
+ * NotCommand, a subclass of AbstractCommand
+ * @author Yanbo Fang
+ * @author Henry Taylor
+ */
 public class NotCommand extends AbstractCommand {
 
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = -1527221261143527933L;
 	private static final Integer NUM_OF_EXPRESSIONS = 1;
 

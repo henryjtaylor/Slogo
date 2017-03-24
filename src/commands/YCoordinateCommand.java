@@ -5,11 +5,13 @@ import java.util.List;
 import backend.UserMethodManager;
 import backend.VariableManager;
 
+/**
+ * YCoordinateCommand, a subclass of AbstractCommand
+ * @author Yanbo Fang
+ * @author Henry Taylor
+ */
 public class YCoordinateCommand extends AbstractCommand {
 
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 6530716139534500897L;
 	private static final Integer NUM_OF_EXPRESSIONS = 0;
 	

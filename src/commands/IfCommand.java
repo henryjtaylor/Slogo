@@ -5,11 +5,13 @@ import java.util.List;
 import backend.UserMethodManager;
 import backend.VariableManager;
 
+/**
+ * IfCommand, a subclass of ConditionalCommand
+ * @author Yanbo Fang
+ * @author Henry Taylor
+ */
 public class IfCommand extends ConditionalCommand {
 
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = -8889501036189048184L;
 	private static final Integer NUM_OF_EXPRESSIONS = 2;
 

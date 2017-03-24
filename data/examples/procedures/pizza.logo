@@ -1,4 +1,4 @@
-to :slice [ ]
+to slice [ ]
 [
   rt 30
   fd 50
@@ -9,7 +9,7 @@ to :slice [ ]
   bk 50
 ]
 
-to :pizza [ ]
+to pizza [ ]
 [
   repeat 12
   [
@@ -17,4 +17,4 @@ to :pizza [ ]
   ]
 ]
 
-:pizza
+pizza

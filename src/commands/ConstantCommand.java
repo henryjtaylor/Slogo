@@ -5,11 +5,13 @@ import java.util.List;
 import backend.UserMethodManager;
 import backend.VariableManager;
 
+/**
+ * AndCommand, a subclass of AbstractCommand
+ * @author Yanbo Fang
+ * @author Henry Taylor
+ */
 public class ConstantCommand extends AbstractCommand {
 
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 834632117687447006L;
 	private static final Integer NUM_OF_EXPRESSIONS = 0;
 
@@ -20,11 +22,6 @@ public class ConstantCommand extends AbstractCommand {
 	@Override
 	public Double getValue(List<Object> args, VariableManager vars) {
 		return Double.parseDouble(getInstruction());
-	}
-
-	@Override
-	public void performBeforeExecution() {
-		return;		
 	}
 
 }

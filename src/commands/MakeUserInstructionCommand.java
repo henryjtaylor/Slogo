@@ -8,11 +8,13 @@ import backend.UserMethod;
 import backend.UserMethodManager;
 import backend.VariableManager;
 
+/**
+ * MakeUserInstructionCommand, a subclass of AbstractCommand
+ * @author Yanbo Fang
+ * @author Henry Taylor
+ */
 public class MakeUserInstructionCommand extends AbstractCommand {
 
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = -5208260251750849740L;
 	private static final Integer NUM_OF_EXPRESSIONS = 3;
 
@@ -30,7 +32,7 @@ public class MakeUserInstructionCommand extends AbstractCommand {
 		int k = 0;
 		UserMethod method = null;
 		while (k < getArguments().size()) {
-			method = makeMethod(getArguments().get(k + 2).getAllArguments(), k);
+			method = makeMethod(getArguments().get(k + 2).getArguments(), k);
 			k += NUM_OF_EXPRESSIONS;
 		}
 		setValue(method.getMethodName().isEmpty() ? 0.0 : 1.0);
@@ -54,7 +56,7 @@ public class MakeUserInstructionCommand extends AbstractCommand {
 	private UserMethod makeMethod(List<Command> function, int k) {
 		int numOfVariables = 0;
 		List<String> variablesNameList = new ArrayList<String>();
-		for (Command c : getArguments().get(k + 1).getAllArguments()) {
+		for (Command c : getArguments().get(k + 1).getArguments()) {
 			numOfVariables++;
 			variablesNameList.add(c.getInstruction());
 		}

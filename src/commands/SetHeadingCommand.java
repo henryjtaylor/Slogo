@@ -5,12 +5,13 @@ import java.util.List;
 import backend.UserMethodManager;
 import backend.VariableManager;
 
-
+/**
+ * SetHeadingCommand, a subclass of MoveCommand
+ * @author Yanbo Fang
+ * @author Henry Taylor
+ */
 public class SetHeadingCommand extends MoveCommand {
 	
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = -8147616540009761382L;
 	private static final Integer NUM_OF_EXPRESSIONS = 1;
 

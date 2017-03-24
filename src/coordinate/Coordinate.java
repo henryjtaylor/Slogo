@@ -1,5 +1,10 @@
 package coordinate;
 
+/**
+ * Wrapper for coordinate
+ * @author Yanbo Fang
+ *
+ */
 public class Coordinate {
 
 	private Double myX;

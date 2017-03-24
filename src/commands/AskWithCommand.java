@@ -7,11 +7,13 @@ import turtles.Turtle;
 import backend.UserMethodManager;
 import backend.VariableManager;
 
+/**
+ * AskWithCommand, a subclass of LoopCommand
+ * @author Yanbo Fang
+ * @author Henry Taylor
+ */
 public class AskWithCommand extends LoopCommand {
 
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = -8958314693164883784L;
 
 	public AskWithCommand(String instruction, VariableManager variables, UserMethodManager methods) {

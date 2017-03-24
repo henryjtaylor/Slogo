@@ -7,6 +7,11 @@ import frontend.API.ExternalViewAPI;
 
 import java.util.Observable;
 
+/**
+ * VariableManagerObserver, if the variable manager changes in the Model, View would be noticed
+ * @author Yanbo Fang
+ *
+ */
 public class VariableManagerObserver implements Observer {
 	private VariableManager ov = null;
 	private ExternalViewAPI myView;

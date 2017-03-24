@@ -7,13 +7,16 @@ import backend.UserMethodManager;
 import backend.Variable;
 import backend.VariableManager;
 
+/**
+ * UserMethodCommand, a subclass of AbstractCommand
+ * @author Yanbo Fang
+ * @author Henry Taylor
+ */
 public class UserMethodCommand extends AbstractCommand {
 
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = -8919002370699505597L;
 	private UserMethod myMethod;
+	private static final Integer NUM_OF_EXPRESSIONS = 0;
 
 	public UserMethodCommand(String instruction, VariableManager variables, UserMethodManager methods,
 			UserMethod method) {
@@ -23,7 +26,7 @@ public class UserMethodCommand extends AbstractCommand {
 	}
 
 	public UserMethodCommand(String instruction, VariableManager variables, UserMethodManager methods) {
-		super(instruction, variables, methods);
+		super(instruction, variables, methods, NUM_OF_EXPRESSIONS);
 		checkForMethod();
 		setRunAllTurtles(true);
 	}

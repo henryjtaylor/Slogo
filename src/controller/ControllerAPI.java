@@ -6,6 +6,11 @@ import java.util.ResourceBundle;
 import frontend.WorkSpace;
 import javafx.collections.ObservableList;
 
+/**
+ * API for Controller, to be used by View
+ * @author Yanbo Fang
+ *
+ */
 public interface ControllerAPI {
 	void handleInput(String input);
 

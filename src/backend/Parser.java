@@ -9,6 +9,7 @@ package backend;
  * and GroupStart. This class is only called by Model. I think this is good design because it delegates
  * there to be only one place where parsing the commands takes place. In addition, parser matters about 
  * nothing else other than taking the input and trying to make them into commands
+ * @author Henry
  */
 
 import java.util.ArrayList;
@@ -72,7 +73,7 @@ public class Parser {
 	 * @param numberOfTimes - the number of arguments the command needs before completing
 	 */
 	private void runArguments(Command command, Scanner s, int numberOfTimes) {
-		while (command.getCurrentArgumentSize() < numberOfTimes || numberOfTimes < 0) {
+		while (command.getArguments().size() < numberOfTimes || numberOfTimes < 0) {
 			Command toBeAdded = recurseParse(s);
 			if (toBeAdded == null) {
 				break;
@@ -139,7 +140,7 @@ public class Parser {
 		Command infiniteCommand = reflect(current);
 		if (infiniteCommand != null && infiniteCommand.getNumOfExpressions() != 0) {
 			runArguments(infiniteCommand, s, -1);
-			if (infiniteCommand.getAllArguments().size() % infiniteCommand.getNumOfExpressions() != 0) {
+			if (infiniteCommand.getArguments().size() % infiniteCommand.getNumOfExpressions() != 0) {
 				throw new ParserException(String.format("WRONG NUMBER OF ARGUMENTS FOR %s", current), new Exception());
 			}
 			infiniteCommand.performBeforeExecution();

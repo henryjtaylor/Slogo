@@ -5,11 +5,13 @@ import java.util.List;
 import backend.UserMethodManager;
 import backend.VariableManager;
 
+/**
+ * SetBackgroundCommand, a subclass of AbstractCommand
+ * @author Yanbo Fang
+ * @author Henry Taylor
+ */
 public class SetBackgroundCommand extends AbstractCommand {
 
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 3390092944986979730L;
 	private static final int NUM_OF_EXPRESSIONS = 1;
 	public SetBackgroundCommand(String instruction, VariableManager variables,

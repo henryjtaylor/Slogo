@@ -1,4 +1,4 @@
-to :squiggle [ ]
+to squiggle [ ]
 [
   forward 50
   right 150
@@ -9,10 +9,10 @@ to :squiggle [ ]
 ]
 
 
-to :pinwheel [ ]
+to pinwheel [ ]
 [
-  repeat 18 [ :squiggle ]
+  repeat 18 [ squiggle ]
 ]
 
 
-:pinwheel
+pinwheel

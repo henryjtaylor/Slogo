@@ -8,11 +8,13 @@ import backend.UserMethodManager;
 import backend.Variable;
 import backend.VariableManager;
 
+/**
+ * MakeVariableCommand, a subclass of AbstractCommand
+ * @author Yanbo Fang
+ * @author Henry Taylor
+ */
 public class MakeVariableCommand extends AbstractCommand {
 
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = -2565186453840421257L;
 	private String myVariableName;
 	private Variable myVariable;
@@ -70,7 +72,5 @@ public class MakeVariableCommand extends AbstractCommand {
 			});
 		return convArgs;
 	}
-
-	
 
 }

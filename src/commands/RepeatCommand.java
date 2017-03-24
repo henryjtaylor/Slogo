@@ -6,11 +6,13 @@ import backend.UserMethodManager;
 import backend.Variable;
 import backend.VariableManager;
 
+/**
+ * RepeatCommand, a subclass of LoopCommand
+ * @author Yanbo Fang
+ * @author Henry Taylor
+ */
 public class RepeatCommand extends LoopCommand {
 
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 5560327249224036748L;
 	private static final String REPEAT_VARIABLE_NAME = ":repcount";
 
@@ -29,11 +31,7 @@ public class RepeatCommand extends LoopCommand {
 	protected ArrayList<Object> argumentsToConvert(VariableManager vars) {
 		ArrayList<Object> convArgs = new ArrayList<Object>();
 		getArguments().stream().forEach(c -> {
-			if (getArguments().indexOf(c) % 2 == 0) {
-				convArgs.add(convertArguments(c, vars, true));
-			} else {
-				convArgs.add(c);
-			}
+			convArgs.add(getArguments().indexOf(c) % 2 == 0 ? convertArguments(c, vars, true) : c);
 		});
 		return convArgs;
 	}

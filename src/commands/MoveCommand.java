@@ -6,11 +6,13 @@ import backend.UserMethodManager;
 import backend.VariableManager;
 import coordinate.Coordinate;
 
+/**
+ * MoveCommand, a subclass of AbstractCommand
+ * @author Yanbo Fang
+ * @author Henry Taylor
+ */
 public abstract class MoveCommand extends AbstractCommand {
-
-	/**
-	 * 
-	 */
+	
 	private static final long serialVersionUID = -2746325331777941415L;
 	protected int myQuadrant;
 

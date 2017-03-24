@@ -5,11 +5,13 @@ import java.util.List;
 import backend.UserMethodManager;
 import backend.VariableManager;
 
+/**
+ * SetPaletteCommand, a subclass of AbstractCommand
+ * @author Yanbo Fang
+ * @author Henry Taylor
+ */
 public class SetPaletteCommand extends AbstractCommand {
 
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = -6343818229656607112L;
 	private static final int NUM_OF_EXPRESSIONS = 4;
 	public SetPaletteCommand(String instruction, VariableManager variables,

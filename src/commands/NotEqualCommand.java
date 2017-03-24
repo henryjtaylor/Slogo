@@ -7,11 +7,13 @@ import java.util.Set;
 import backend.UserMethodManager;
 import backend.VariableManager;
 
+/**
+ * NotEqualCommand, a subclass of AbstractCommand
+ * @author Yanbo Fang
+ * @author Henry Taylor
+ */
 public class NotEqualCommand extends AbstractCommand {
 
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = -1150959654000201655L;
 	private static final Integer NUM_OF_EXPRESSIONS = 2;
 

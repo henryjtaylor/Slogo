@@ -6,6 +6,11 @@ import java.util.List;
 import backend.UserMethodManager;
 import backend.VariableManager;
 
+/**
+ * AndCommand, a subclass of AbstractCommand
+ * @author Yanbo Fang
+ * @author Henry Taylor
+ */
 public class AndCommand extends AbstractCommand {
 
 	private static final long serialVersionUID = 1021018639939721241L;

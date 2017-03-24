@@ -20,6 +20,11 @@ import frontend.API.ExternalViewAPI;
 import javafx.collections.ObservableList;
 import javafx.stage.Stage;
 
+/**
+ * This class provides the concrete implementation of the ControllerAPI.
+ * @author Yanbo Fang
+ *
+ */
 public class Controller implements ControllerAPI {
 
 	private static final String SER_FILEPATH = "src/resources/";

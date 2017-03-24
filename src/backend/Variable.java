@@ -3,7 +3,7 @@ package backend;
 /**
  * Wrapper class for the variables -- contains the variable name as well as it's value. VariableManager
  * manages all the variables.
- * @author Henry
+ * @author Henry and Yanbo
  *
  */
 public class Variable implements java.io.Serializable {

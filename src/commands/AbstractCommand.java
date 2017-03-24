@@ -1,6 +1,7 @@
 package commands;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import turtles.Turtle;
 import turtles.TurtleManagerCommandAPI;
@@ -8,11 +9,14 @@ import backend.ParserException;
 import backend.UserMethodManager;
 import backend.VariableManager;
 
+/**
+ * This class provides a skeletal implementation of the {@link Command}
+ * interface.
+ * @author Yanbo Fang
+ * @author Henry Taylor
+ */
 public abstract class AbstractCommand implements Command {
 
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = -7877106052459852818L;
 	private Integer myNumOfExpressions;
 	private String myInstruction;
@@ -24,8 +28,17 @@ public abstract class AbstractCommand implements Command {
 	private VariableManager myVariables;
 	private UserMethodManager myUserMethods;
 	private TurtleManagerCommandAPI myTurtleManager;
-	private boolean myRunAllTurtles; 
+	private boolean myRunAllTurtles;
 
+	/**
+	 * Constructor for AbstractCommand, set the initial myNumOfExpressions to 0.
+	 * @param Name
+	 *            of the command
+	 * @param VariableManager
+	 *            - variables
+	 * @param UserMethodManager
+	 *            - methods
+	 */
 	public AbstractCommand(String instruction, VariableManager variables, UserMethodManager methods) {
 		myArguments = new ArrayList<Command>();
 		myNumOfExpressions = 0;
@@ -36,7 +49,7 @@ public abstract class AbstractCommand implements Command {
 		myRunAllTurtles = false;
 	}
 
-	public AbstractCommand(String instruction, VariableManager variables, UserMethodManager methods,
+	protected AbstractCommand(String instruction, VariableManager variables, UserMethodManager methods,
 			int numOfExpressions) {
 		this(instruction, variables, methods);
 		myNumOfExpressions = numOfExpressions;
@@ -53,15 +66,15 @@ public abstract class AbstractCommand implements Command {
 	public String getInstruction() {
 		return myInstruction;
 	}
-	
-	protected ArrayList<Command> getArguments() {
+
+	public ArrayList<Command> getArguments() {
 		return myArguments;
 	}
 
 	protected ArrayList<Object> getConvertedArguments() {
 		return myConvertedArguments;
 	}
-	
+
 	protected void setConvertedArguments(ArrayList<Object> myConvertedArguments) {
 		this.myConvertedArguments = myConvertedArguments;
 	}
@@ -77,7 +90,7 @@ public abstract class AbstractCommand implements Command {
 	protected Turtle getTurtle() {
 		return myTurtle;
 	}
-	
+
 	protected void setTurtle(Turtle myTurtle) {
 		this.myTurtle = myTurtle;
 	}
@@ -113,7 +126,7 @@ public abstract class AbstractCommand implements Command {
 	protected void setTurtleManager(TurtleManagerCommandAPI myTurtleManager) {
 		this.myTurtleManager = myTurtleManager;
 	}
-	
+
 	public boolean isRunAllTurtles() {
 		return myRunAllTurtles;
 	}
@@ -128,14 +141,6 @@ public abstract class AbstractCommand implements Command {
 		}
 	}
 
-	public int getCurrentArgumentSize() {
-		return myArguments.size();
-	}
-
-	public List<Command> getAllArguments() {
-		return myArguments;
-	}
-
 	protected void changeToFinished() {
 		myFinished = true;
 	}
@@ -144,29 +149,27 @@ public abstract class AbstractCommand implements Command {
 		myFinished = false;
 	}
 
-	public abstract Double getValue(List<Object> args, VariableManager localVariables);
+	protected List<Command> unNestList(Command c) {
+		return c.getArguments();
+	}
 
-	/**
-	 * 
-	 * @return - value that we want to send to UI to be displayed
-	 */
-	public Double executeCommand(TurtleManagerCommandAPI turtles, VariableManager vars, Double k) {
+	public void performBeforeExecution() {
+	}
+
+	protected abstract Double getValue(List<Object> args, VariableManager localVariables);
+
+	public Double executeCommand(TurtleManagerCommandAPI turtles, VariableManager vars, Double turtleID) {
 		myTurtleManager = turtles;
 		VariableManager localVariables = new VariableManager();
 		localVariables.addAll(vars.getVariableMap());
-		myTurtle = turtles.getTurtle(k);
+		myTurtle = turtles.getTurtle(turtleID);
 		myConvertedArguments = argumentsToConvert(localVariables);
 		this.changeToFinished();
 		return this.getValue(myConvertedArguments, localVariables);
 	}
 
 	protected ArrayList<Object> argumentsToConvert(VariableManager vars) {
-		ArrayList<Object> convArgs = convertArguments(myArguments, vars, true);
-		return convArgs;
-	}
-
-	public void performBeforeExecution() {
-		return;
+		return convertArguments(myArguments, vars, true);
 	}
 
 	protected ArrayList<Object> convertArguments(List<Command> list, VariableManager localVariables, boolean nest) {
@@ -191,13 +194,7 @@ public abstract class AbstractCommand implements Command {
 	}
 
 	protected ArrayList<Object> convertArguments(Command list, VariableManager vars, boolean nest) {
-		ArrayList<Command> temp = new ArrayList<Command>();
-		temp.add(list);
+		ArrayList<Command> temp = new ArrayList<Command>(Collections.singletonList(list));
 		return convertArguments(temp, vars, nest);
 	}
-
-	protected List<Command> unNestList(Command c) {
-		return c.getAllArguments();
-	}
-
 }

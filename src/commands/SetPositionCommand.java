@@ -1,17 +1,18 @@
 package commands;
 
-
 import java.util.List;
 
 import backend.UserMethodManager;
 import backend.VariableManager;
 import coordinate.Coordinate;
 
+/**
+ * SetPositionCommand, a subclass of MoveCommand
+ * @author Yanbo Fang
+ * @author Henry Taylor
+ */
 public class SetPositionCommand extends MoveCommand {
-	
-	/**
-	 * 
-	 */
+
 	private static final long serialVersionUID = -7474008870493729212L;
 	private static final Integer NUM_OF_EXPRESSIONS = 2;
 	private Coordinate myCoord;

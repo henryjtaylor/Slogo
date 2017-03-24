@@ -1,7 +1,7 @@
 set :distance 50
 set :angle 10
 
-to :square [ ]
+to square [ ]
 [
   repeat 4
   [
@@ -10,25 +10,25 @@ to :square [ ]
   ]
 ]
 
-to :tunnel [ ]
+to tunnel [ ]
 [
   repeat 10
   [
-    :square
+    square
     set :distance sum :distance 10
   ]
 ]
 
-to :warp [ ]
+to warp [ ]
 [
   repeat 10
   [
-    :square
+    square
     rt :angle
     set :distance sum :distance 10
   ]
 ]
 
 
-#:cs
-:tunnel
+#cs
+tunnel

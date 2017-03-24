@@ -5,6 +5,11 @@ import java.util.List;
 import backend.UserMethodManager;
 import backend.VariableManager;
 
+/**
+ * ArcTangentCommand, a subclass of AbstractCommand
+ * @author Yanbo Fang
+ * @author Henry Taylor
+ */
 public class ArcTangentCommand extends AbstractCommand {
 	/**
 	 * 

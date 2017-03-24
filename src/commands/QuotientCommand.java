@@ -5,11 +5,13 @@ import java.util.List;
 import backend.UserMethodManager;
 import backend.VariableManager;
 
+/**
+ * QuotientCommand, a subclass of AbstractCommand
+ * @author Yanbo Fang
+ * @author Henry Taylor
+ */
 public class QuotientCommand extends AbstractCommand {
-
-	/**
-	 * 
-	 */
+	
 	private static final long serialVersionUID = 6193171677458971186L;
 	private static final Integer NUM_OF_EXPRESSIONS = 2;
 

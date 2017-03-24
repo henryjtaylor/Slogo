@@ -6,11 +6,13 @@ import java.util.List;
 import backend.UserMethodManager;
 import backend.VariableManager;
 
+/**
+ * ConditionalCommand, a subclass of AbstractCommand
+ * @author Yanbo Fang
+ * @author Henry Taylor
+ */
 public abstract class ConditionalCommand extends AbstractCommand {
 
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = -3640331309373660433L;
 
 	public ConditionalCommand(String instruction, VariableManager variables, UserMethodManager methods,

@@ -6,11 +6,13 @@ import backend.ParserException;
 import backend.UserMethodManager;
 import backend.VariableManager;
 
+/**
+ * TellCommand, a subclass of AbstractCommand
+ * @author Yanbo Fang
+ * @author Henry Taylor
+ */
 public class TellCommand extends AbstractCommand {
 
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 7735245879905342633L;
 	private static final int NUM_OF_EXPRESSIONS = 1;
 
@@ -34,7 +36,7 @@ public class TellCommand extends AbstractCommand {
 	
 	@Override
 	protected ArrayList<Object> argumentsToConvert(VariableManager vars) {
-		ArrayList<Object> convArgs = convertArguments(getArguments().get(getArguments().size()-1).getAllArguments(), 
+		ArrayList<Object> convArgs = convertArguments(getArguments().get(getArguments().size()-1).getArguments(), 
 				vars, true);
 		return convArgs;
 	}

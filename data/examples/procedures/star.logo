@@ -1,4 +1,4 @@
-to :star [ ] 
+to star [ ] 
 [ 
   repeat 5 
   [ 
@@ -7,4 +7,4 @@ to :star [ ]
   ]
 ]
 
-:star
+star
