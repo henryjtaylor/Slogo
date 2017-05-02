@@ -28,6 +28,7 @@ public class Turtle extends Observable implements TurtleAPI {
 	private boolean myClear;
 	private Double myID;
 	private Double myImageIndex;
+	private ImageView myStamp;
 
 	/**
 	 * @param width - width of turtle image
@@ -244,5 +245,33 @@ public class Turtle extends Observable implements TurtleAPI {
 	private void setFlag(Object o) {
 		this.setChanged();
 		this.notifyObservers(o);
+	}
+	
+	/**
+	 * Makes a new copy of the image view and adds it to the view
+	 */
+	public void stamp() {
+		ImageView stamp = new ImageView(myImage.getImage());
+		stamp.setRotate(myImage.getRotate());
+		stamp.setTranslateX(myImage.getTranslateX());
+		stamp.setTranslateY(myImage.getTranslateY());
+		stamp.setFitHeight(myImage.getFitHeight());
+		stamp.setFitWidth(myImage.getFitWidth());
+		myStamp = stamp;
+		this.setChanged();
+		this.notifyObservers(stamp);
+	}
+	
+	/**
+	 * Removes the turtle's stamp
+	 */
+	public boolean clearStamp() {
+		if (myStamp.getImage() == null) {
+			return false;
+		}
+		myStamp.setImage(null);
+		this.setChanged();
+		this.notifyObservers(myStamp);
+		return true;
 	}
 }

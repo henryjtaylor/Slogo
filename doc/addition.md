@@ -1,2 +1,8 @@
 Estimation: 
 	I think this addition will take me about an hour. There's not too much to do to add this feature, I just need to look over how everything works again. To implement this feature, I think I will only have to change 5 classes. I need to add two: the actual commands. Then, I will only need to add methods in Turtle, View, and TurtleView to actually add the stamps. 
+
+Reivew:
+	I was right. It took me probably 45 minutes to add these two new commands. I only had to update the 5 files that I mentioned to add the feature because of the way we had set up observers monitoring the turtles, which is conventient. All I had to do was add a method in Turtle that made a stamp, then notified the observer. Then, I only had to look at the code for the observer and add/remove it to/from the turtleView. Yes, I tested both commands seperately, and they both worked on the first try. 
+
+Analysis:
+	It was actually a little better than I remembered. The classes were a bit messy, which makes the readability a little harder. For instance, in the View side, which I had barely looked at previously, they just used a single observer, which was the actual View, and used 'instanceof' and type casting for every flagged change. Although this made it easy to add the feature, it is generally not good design. So, I would improve that. Second, although I think the actual design of our command system is decent, it is a little confusing, so I would work on refactoring that a little. 

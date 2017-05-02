@@ -15,6 +15,7 @@ import java.util.Map;
 import java.util.Observable;
 import java.util.Observer;
 import java.util.ResourceBundle;
+
 import controller.Controller;
 import controller.ControllerAPI;
 import coordinate.Coordinate;
@@ -39,6 +40,7 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyCode;
 import javafx.scene.layout.ColumnConstraints;
 import javafx.scene.layout.GridPane;
@@ -181,6 +183,13 @@ public class View implements ExternalViewAPI, InternalViewAPI, Observer {
 				Image temp = paletteView.getImageOf(d);
 				if (temp != null) {
 					t.setImage(temp);
+				}
+			} else if (arg1 instanceof ImageView) {
+				ImageView stamp = (ImageView) arg1;
+				if (stamp.getImage() == null) {
+					turtleView.removeTurtle(stamp);
+				} else {
+					turtleView.placeTurtle((ImageView) arg1);
 				}
 			}
 		}

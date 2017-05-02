@@ -111,4 +111,8 @@ public class TurtleView implements TurtleViewerAPI {
 	public double getBackgroundColor() {
 		return colorIndex;
 	}
+	
+	public void addStamp(Node a) {
+		viewer.getChildren().add(a);
+	}
 }
