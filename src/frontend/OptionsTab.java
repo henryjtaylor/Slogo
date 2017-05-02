@@ -42,7 +42,7 @@ public class OptionsTab implements SubcomponentAPI {
 
 	private Stage s;
 	private Scene scene;
-	private String url = getClass().getClassLoader().getResource("help.html").toExternalForm();
+	private String url;//= getClass().getClassLoader().getResource("help.html").toExternalForm();
 	private WebEngine webEngine;
 	
 	private ObservableList<String> files;
