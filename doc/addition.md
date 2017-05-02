@@ -1,0 +1,2 @@
+Estimation: 
+	I think this addition will take me about an hour. There's not too much to do to add this feature, I just need to look over how everything works again. To implement this feature, I think I will only have to change 5 classes. I need to add two: the actual commands. Then, I will only need to add methods in Turtle, View, and TurtleView to actually add the stamps. 
